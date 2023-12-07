@@ -6,6 +6,7 @@ import Title from '../components/Title/Title.componen';
 import Caracter from '../components/Caracter/Caracter.component';
 import LoginSignup from '../components/LoginSignup/LoginSignup.component';
 import Description from '../components/Descreption/Descreption.component';
+import Footer from '../components/Footer/Footer.component';
 
 const caracterImage1 = require('../../../assets/caracter1.png');
 const caracterImage2 = require('../../../assets/caracter2.png');
@@ -30,6 +31,9 @@ const Landing_page = () => {
 			</Grid>
 			<Grid item xs={6}>
 				<Description />
+			</Grid>
+			<Grid item xs={12}>
+				<Footer />
 			</Grid>
 		</Grid>
 	);
