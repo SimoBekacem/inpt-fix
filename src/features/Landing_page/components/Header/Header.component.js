@@ -18,7 +18,7 @@ export default function Header() {
 						justifyContent={'space-between'}
 						width='100%'
 					>
-						<img src={require('../../../../assets/logo.png')} />
+						<img src={require('../../../../assets/logo.svg')} />
 						<Stack
 							spacing={2}
 							direction={'row'}

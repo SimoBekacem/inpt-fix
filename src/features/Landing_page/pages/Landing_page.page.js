@@ -2,13 +2,10 @@ import { Grid } from '@mui/material';
 import React from 'react';
 
 import Header from '../components/Header/Header.component';
-import Title from '../components/Title/Title.componen';
-import Caracter from '../components/Caracter/Caracter.component';
-import LoginSignup from '../components/LoginSignup/LoginSignup.component';
-import Description from '../components/Descreption/Descreption.component';
+import View1 from '../components/View1/View1.component';
+import View2 from '../components/View2/View2.component';
 import Footer from '../components/Footer/Footer.component';
 
-const caracterImage1 = require('../../../assets/caracter1.png');
 const caracterImage2 = require('../../../assets/caracter2.png');
 
 const Landing_page = () => {
@@ -17,20 +14,11 @@ const Landing_page = () => {
 			<Grid item xs={12}>
 				<Header />
 			</Grid>
-			<Grid item xs={7}>
-				<Title />
-			</Grid>
-			<Grid item xs={5}>
-				<Caracter image={caracterImage1} />
+			<Grid item xs={12}>
+				<View1 />
 			</Grid>
 			<Grid item xs={12}>
-				<LoginSignup />
-			</Grid>
-			<Grid item xs={6}>
-				<Caracter image={caracterImage2} />
-			</Grid>
-			<Grid item xs={6}>
-				<Description />
+				<View2 />
 			</Grid>
 			<Grid item xs={12}>
 				<Footer />
