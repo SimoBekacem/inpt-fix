@@ -3,7 +3,12 @@ import React from 'react';
 
 import Header from '../components/Header/Header.component';
 import Title from '../components/Title/Title.componen';
-import Caracter_1 from '../components/Caracter_1/Caracter_1.component';
+import Caracter from '../components/Caracter/Caracter.component';
+import LoginSignup from '../components/LoginSignup/LoginSignup.component';
+import Description from '../components/Descreption/Descreption.component';
+
+const caracterImage1 = require('../../../assets/caracter1.png');
+const caracterImage2 = require('../../../assets/caracter2.png');
 
 const Landing_page = () => {
 	return (
@@ -15,7 +20,16 @@ const Landing_page = () => {
 				<Title />
 			</Grid>
 			<Grid item xs={5}>
-				<Caracter_1 />
+				<Caracter image={caracterImage1} />
+			</Grid>
+			<Grid item xs={12}>
+				<LoginSignup />
+			</Grid>
+			<Grid item xs={6}>
+				<Caracter image={caracterImage2} />
+			</Grid>
+			<Grid item xs={6}>
+				<Description />
 			</Grid>
 		</Grid>
 	);

@@ -1,15 +1,12 @@
 import { Stack } from '@mui/material';
 import React from 'react';
 
-const Caracter_1 = () => {
+const Caracter = ({ image }) => {
 	return (
 		<Stack justifyContent={'center'} alignItems={'center'} height={'80vh'}>
-			<img
-				src={require('../../../../assets/caracter1.png')}
-				height={'100%'}
-			/>
+			<img src={image} height={'100%'} />
 		</Stack>
 	);
 };
 
-export default Caracter_1;
+export default Caracter;
