@@ -18,11 +18,11 @@ const View1 = () => {
 				backgroundSize: 'cover',
 			}}
 		>
-			<Grid item xs={7}>
+			<Grid item sm={7} xs={12}>
 				<Title />
 			</Grid>
-			<Grid item xs={5}>
-				<Caracter image={caracterImage1} size={'100%'} />
+			<Grid item sm={5} xs={12}>
+				<Caracter image={caracterImage1} size={'100%'} isBig />
 			</Grid>
 		</Grid>
 	);

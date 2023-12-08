@@ -13,12 +13,12 @@ const Footer = () => {
 			}}
 		>
 			<Stack
-				direction={'row'}
+				direction={{ xs: 'column', sm: 'row' }}
 				justifyContent={'space-between'}
 				alignItems={'center'}
 			>
 				<img src={require('../../../../assets/logo.svg')} />
-				<Stack direction={'row'} spacing={1}>
+				<Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
 					<Button
 						sx={{
 							color: 'black',

@@ -22,10 +22,20 @@ const View2 = () => {
 			<Grid item xs={12}>
 				<LoginSignup />
 			</Grid>
-			<Grid item xs={5}>
+			<Grid
+				item
+				md={5}
+				xs={12}
+				sx={{
+					display: {
+						xs: 'none',
+						sm: 'block',
+					},
+				}}
+			>
 				<Caracter image={caracterImage2} />
 			</Grid>
-			<Grid item xs={7}>
+			<Grid item md={7} xs={12}>
 				<Description />
 			</Grid>
 		</Grid>

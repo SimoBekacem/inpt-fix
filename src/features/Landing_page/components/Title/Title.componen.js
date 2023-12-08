@@ -7,11 +7,15 @@ import { typographyStyle, buttonStyle } from './Title.style';
 const Title = () => {
 	return (
 		<Stack
-			sx={{ height: '80vh' }}
+			sx={{ height: { sm: '80vh', xs: '40vh' } }}
 			justifyContent={'center'}
 			alignItems={'center'}
 		>
-			<Stack alignItems={'center'} spacing={4}>
+			<Stack
+				alignItems={'center'}
+				justifyContent={{ sm: 'start', xs: 'center' }}
+				spacing={4}
+			>
 				<Typography variant='h3' sx={typographyStyle}>
 					Make your workflow <br />
 					easier

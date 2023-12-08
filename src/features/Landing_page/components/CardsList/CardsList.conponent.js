@@ -8,7 +8,12 @@ import { CardsConstants } from '../../constants/Cards.constants';
 
 const CardsList = () => {
 	return (
-		<Stack direction={'row'} spacing={9} justifyContent={'center'}>
+		<Stack
+			direction={{ sm: 'row', xs: 'column' }}
+			spacing={{ sm: 9, xs: 3 }}
+			justifyContent={'center'}
+			alignItems={'center'}
+		>
 			{CardsConstants.map(({ title, description, button, color }) => {
 				return (
 					<CostumCard

@@ -11,6 +11,10 @@ const Description = () => {
 						component='div'
 						sx={{
 							letterSpacing: '0.5rem',
+							textAlign: {
+								md: 'start',
+								xs: 'center',
+							},
 						}}
 					>
 						Make your <br /> workflow easier
@@ -21,6 +25,10 @@ const Description = () => {
 						mt={2}
 						sx={{
 							letterSpacing: '0.25rem',
+							textAlign: {
+								md: 'start',
+								xs: 'center',
+							},
 						}}
 					>
 						Our website is didicated for companys <br /> that needs
