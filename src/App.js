@@ -9,7 +9,7 @@ function App() {
 	return (
 		<>
 			<CssBaseline />
-			<Landing_page />
+			<ProfileCreatoPage />
 		</>
 	);
 }
