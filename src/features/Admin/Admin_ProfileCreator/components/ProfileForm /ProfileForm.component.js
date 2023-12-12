@@ -6,6 +6,7 @@ import {
 } from '../../constants/ProfileFormLabels';
 
 import ProfileFormDropdown from '../ProfileFormDropdonw/ProfileFormDropdonw.compoenent';
+import AddButton from '../AddButton/AddButton.component';
 
 // greedy gost
 const ProfileForm = () => {
@@ -15,8 +16,9 @@ const ProfileForm = () => {
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				height: '90vh',
+				height: '80vh',
 			}}
+			elevation={0}
 		>
 			<Grid
 				container
@@ -32,10 +34,10 @@ const ProfileForm = () => {
 					return (
 						<Grid item xs={4}>
 							<TextField
-								sx={{ minWidth: 170 }}
 								id='outlined-basic'
 								label={label}
 								variant='outlined'
+								size='large'
 							/>
 						</Grid>
 					);
@@ -47,6 +49,9 @@ const ProfileForm = () => {
 						</Grid>
 					);
 				})}
+				<Grid item xs={12}>
+					<AddButton label={'Add New User'} />
+				</Grid>
 			</Grid>
 		</Paper>
 	);
