@@ -2,6 +2,7 @@ import React from 'react';
 import ProfilesTable from '../Table/Table.component';
 import { Stack, Button } from '@mui/material';
 import ProfileForm from '../ProfileForm /ProfileForm.component';
+import { rows, tableHeaderLabels } from '../../constants/ProfileTableLabels';
 const TableContainer = () => {
 	const [openForm, setOpenForm] = React.useState(false);
 	const handleClick = () => {
@@ -24,7 +25,14 @@ const TableContainer = () => {
 					width: '80%',
 				}}
 			>
-				{openForm ? <ProfileForm /> : <ProfilesTable />}
+				{openForm ? (
+					<ProfileForm />
+				) : (
+					<ProfilesTable
+						rows={rows}
+						tableHeaderLabels={tableHeaderLabels}
+					/>
+				)}
 				<Button
 					onClick={handleClick}
 					color='success'
