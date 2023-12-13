@@ -6,9 +6,7 @@ import {
 } from '../../constants/ProfileFormLabels';
 
 import ProfileFormDropdown from '../ProfileFormDropdonw/ProfileFormDropdonw.compoenent';
-import AddButton from '../AddButton/AddButton.component';
 
-// greedy gost
 const ProfileForm = () => {
 	return (
 		<Paper
@@ -16,7 +14,6 @@ const ProfileForm = () => {
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',
-				height: '80vh',
 			}}
 			elevation={0}
 		>
@@ -24,7 +21,7 @@ const ProfileForm = () => {
 				container
 				spacing={3}
 				sx={{
-					width: '70%',
+					width: '80%',
 					padding: '2rem 3rem 3rem 2rem',
 					boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
 					borderRadius: '2rem',
@@ -49,9 +46,6 @@ const ProfileForm = () => {
 						</Grid>
 					);
 				})}
-				<Grid item xs={12}>
-					<AddButton label={'Add New User'} />
-				</Grid>
 			</Grid>
 		</Paper>
 	);

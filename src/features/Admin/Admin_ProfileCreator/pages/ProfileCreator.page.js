@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 
 import Header from '../../Admin_globale-components/Header/Header.component';
 import ProfileForm from '../components/ProfileForm /ProfileForm.component';
-
+import TableContainer from '../components/TableContainer/TableContainer.component';
 const ProfileCreatoPage = () => {
 	return (
 		<Grid container>
@@ -11,7 +11,7 @@ const ProfileCreatoPage = () => {
 				<Header />
 			</Grid>
 			<Grid item xs={12}>
-				<ProfileForm />
+				<TableContainer />
 			</Grid>
 		</Grid>
 	);
