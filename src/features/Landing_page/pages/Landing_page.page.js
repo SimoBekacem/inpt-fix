@@ -6,8 +6,6 @@ import View1 from '../components/View1/View1.component';
 import View2 from '../components/View2/View2.component';
 import Footer from '../components/Footer/Footer.component';
 
-const caracterImage2 = require('../../../assets/caracter2.png');
-
 const Landing_page = () => {
 	return (
 		<Grid container>
