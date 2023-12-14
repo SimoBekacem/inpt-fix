@@ -14,7 +14,7 @@ import {
 	headerTypographyStyle,
 } from './Table.style';
 
-const ProfilesTable = ({ rows, tableHeaderLabels }) => {
+const DataTable = ({ rows, tableHeaderLabels }) => {
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 700 }} aria-label='customized table'>
@@ -37,7 +37,14 @@ const ProfilesTable = ({ rows, tableHeaderLabels }) => {
 					{rows.map((row) => (
 						<StyledTableRow key={row.lastName}>
 							{Object.keys(row).map((keyName, i) => (
-								<StyledTableCell align='center' scope='row'>
+								<StyledTableCell
+									sx={{
+										fontWeight: 'bold',
+									}}
+									align='center'
+									scope='row'
+									size='large'
+								>
 									{row[keyName]}
 								</StyledTableCell>
 							))}
@@ -49,4 +56,4 @@ const ProfilesTable = ({ rows, tableHeaderLabels }) => {
 	);
 };
 
-export default ProfilesTable;
+export default DataTable;

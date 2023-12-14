@@ -2,10 +2,8 @@ import React from 'react';
 import { Stack, Button } from '@mui/material';
 
 import DataTable from '../../../Admin_globale-components/Table/Table.component';
-import ProfileForm from '../ProfileForm /ProfileForm.component';
 
-import { rows, tableHeaderLabels } from '../../constants/ProfileTableLabels';
-
+import { rows, tableHeaderLabels } from '../../constantes/RoleTableLabels';
 const TableContainer = () => {
 	const [openForm, setOpenForm] = React.useState(false);
 	const handleClick = () => {
@@ -28,21 +26,14 @@ const TableContainer = () => {
 					width: '80%',
 				}}
 			>
-				{openForm ? (
-					<ProfileForm />
-				) : (
-					<DataTable
-						rows={rows}
-						tableHeaderLabels={tableHeaderLabels}
-					/>
-				)}
+				<DataTable rows={rows} tableHeaderLabels={tableHeaderLabels} />
 				<Button
 					onClick={handleClick}
 					color='success'
 					size='large'
 					variant='contained'
 				>
-					Add User
+					Add Role
 				</Button>
 			</Stack>
 		</Stack>
