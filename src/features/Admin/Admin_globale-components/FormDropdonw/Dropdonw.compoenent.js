@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const ProfileFormDropdown = ({ label }) => {
+const DataFromDropdown = ({ label }) => {
 	const [age, setAge] = React.useState('');
 
 	const handleChange = (event) => {
@@ -32,4 +32,4 @@ const ProfileFormDropdown = ({ label }) => {
 	);
 };
 
-export default ProfileFormDropdown;
+export default DataFromDropdown;

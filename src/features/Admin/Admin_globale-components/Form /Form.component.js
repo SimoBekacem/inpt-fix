@@ -1,13 +1,9 @@
 import React from 'react';
 import { Paper, Grid, TextField } from '@mui/material';
-import {
-	profileFormLabels,
-	profileDropDownLables,
-} from '../../constants/ProfileFormLabels';
 
-import ProfileFormDropdown from '../ProfileFormDropdonw/ProfileFormDropdonw.compoenent';
+import DataFromDropdown from '../FormDropdonw/Dropdonw.compoenent';
 
-const ProfileForm = () => {
+const DataFrom = ({ DataFromLabels, profileDropDownLables }) => {
 	return (
 		<Paper
 			sx={{
@@ -27,7 +23,7 @@ const ProfileForm = () => {
 					borderRadius: '2rem',
 				}}
 			>
-				{profileFormLabels.map((label) => {
+				{DataFromLabels.map((label) => {
 					return (
 						<Grid item xs={4}>
 							<TextField
@@ -35,6 +31,9 @@ const ProfileForm = () => {
 								label={label}
 								variant='outlined'
 								size='large'
+								sx={{
+									minWidth: '5rem',
+								}}
 							/>
 						</Grid>
 					);
@@ -42,7 +41,7 @@ const ProfileForm = () => {
 				{profileDropDownLables.map((label) => {
 					return (
 						<Grid item xs={4}>
-							<ProfileFormDropdown label={label} />
+							<DataFromDropdown label={label} />
 						</Grid>
 					);
 				})}
@@ -51,4 +50,4 @@ const ProfileForm = () => {
 	);
 };
 
-export default ProfileForm;
+export default DataFrom;

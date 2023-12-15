@@ -2,8 +2,12 @@ import React from 'react';
 import { Stack, Button } from '@mui/material';
 
 import DataTable from '../../../Admin_globale-components/Table/Table.component';
-import ProfileForm from '../ProfileForm /ProfileForm.component';
+import DataFrom from '../../../Admin_globale-components/Form /Form.component';
 
+import {
+	DataFromLabels,
+	profileDropDownLables,
+} from '../../constants/ProfileFormLabels';
 import { rows, tableHeaderLabels } from '../../constants/ProfileTableLabels';
 
 const TableContainer = () => {
@@ -29,7 +33,10 @@ const TableContainer = () => {
 				}}
 			>
 				{openForm ? (
-					<ProfileForm />
+					<DataFrom
+						DataFromLabels={DataFromLabels}
+						profileDropDownLables={profileDropDownLables}
+					/>
 				) : (
 					<DataTable
 						rows={rows}
