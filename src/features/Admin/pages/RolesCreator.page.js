@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import Header from '../../Admin_globale-components/Header/Header.component';
-import TableContainer from '../components/TableContainer/TableContainer.component';
+import Header from '../components/Header/Header.component';
+import TableContainer from '../components/RolesTableContainer/RolesTableContainer.component';
 
 const RolesCreatorPage = () => {
 	return (

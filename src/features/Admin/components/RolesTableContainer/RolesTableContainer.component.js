@@ -1,10 +1,13 @@
 import React from 'react';
 import { Stack, Button } from '@mui/material';
 
-import DataTable from '../../../Admin_globale-components/Table/Table.component';
-import DataFrom from '../../../Admin_globale-components/Form /Form.component';
+import DataTable from '../Table/Table.component';
+import DataFrom from '../Form /Form.component';
 
-import { rows, tableHeaderLabels } from '../../constantes/RoleTableLabels';
+import {
+	rows,
+	tableHeaderLabels,
+} from '../../constantes/RoleTableLabels';
 import {
 	DataFromLabels,
 	profileDropDownLables,

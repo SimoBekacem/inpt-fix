@@ -1,14 +1,14 @@
 import React from 'react';
 import { Stack, Button } from '@mui/material';
 
-import DataTable from '../../../Admin_globale-components/Table/Table.component';
-import DataFrom from '../../../Admin_globale-components/Form /Form.component';
+import DataTable from '../Table/Table.component';
+import DataFrom from '../Form /Form.component';
 
 import {
 	DataFromLabels,
 	profileDropDownLables,
-} from '../../constants/ProfileFormLabels';
-import { rows, tableHeaderLabels } from '../../constants/ProfileTableLabels';
+} from '../../constantes/ProfileFormLabels';
+import { rows, tableHeaderLabels } from '../../constantes/ProfileTableLabels';
 
 const TableContainer = () => {
 	const [openForm, setOpenForm] = React.useState(false);
