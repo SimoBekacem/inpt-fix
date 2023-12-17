@@ -5,7 +5,6 @@ import {
 	TextField,
 	Checkbox,
 	FormControlLabel,
-	FormGroup,
 	FormLabel,
 	Stack,
 	Button,

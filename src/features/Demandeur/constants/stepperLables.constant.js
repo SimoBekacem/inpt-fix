@@ -20,3 +20,30 @@ export const formSelectLabels = [
 	'Autre',
 ];
 export const formDropdown = 'localisation';
+
+export const techListLabels = [
+	{
+		id: '1',
+		firstName: 'hassane',
+		lastName: 'simo',
+		roleService: 'pneumatique tech',
+	},
+	{
+		id: '2',
+		firstName: 'hassane',
+		lastName: 'simo',
+		roleService: 'pneumatique tech',
+	},
+	{
+		id: '3',
+		firstName: 'hassane',
+		lastName: 'simo',
+		roleService: 'pneumatique tech',
+	},
+	{
+		id: '4',
+		firstName: 'hassane',
+		lastName: 'simo',
+		roleService: 'pneumatique tech',
+	},
+];

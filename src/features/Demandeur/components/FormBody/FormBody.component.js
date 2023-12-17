@@ -2,7 +2,8 @@ import React from 'react';
 import { Grid, Stack, Typography } from '@mui/material';
 
 import LignerStepper from '../LignerStepper/LignerSteppercomponent';
-import DataFrom from '../Form /Form.component';
+import DataFrom from '../FormDemandeur /Form.component';
+import FormManager from '../FormManager/FromManager.component';
 
 const FormBody = () => {
 	return (
@@ -23,6 +24,9 @@ const FormBody = () => {
 			</Grid>
 			<Grid xs={12}>
 				<DataFrom />
+			</Grid>
+			<Grid xs={12}>
+				<FormManager />
 			</Grid>
 		</Grid>
 	);
