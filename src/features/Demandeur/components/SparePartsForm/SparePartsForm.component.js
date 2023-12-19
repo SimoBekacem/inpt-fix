@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { rechangePeaces } from '../../constants/managerStore.constant';
 console.log(rechangePeaces.designation);
-const FormManagerStore = () => {
+const SparePartsForm = () => {
 	return (
 		<Paper
 			sx={{
@@ -116,4 +116,4 @@ const FormManagerStore = () => {
 	);
 };
 
-export default FormManagerStore;
+export default SparePartsForm;

@@ -20,7 +20,7 @@ import {
 	formDropdown,
 } from '../../constants/stepperLables.constant';
 
-const DataFrom = () => {
+const CreationFrom = () => {
 	return (
 		<Paper
 			sx={{
@@ -98,4 +98,4 @@ const DataFrom = () => {
 	);
 };
 
-export default DataFrom;
+export default CreationFrom;

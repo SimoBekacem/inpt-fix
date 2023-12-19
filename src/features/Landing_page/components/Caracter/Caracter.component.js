@@ -8,7 +8,7 @@ const Caracter = ({ image, size, isBig }) => {
 			alignItems={'center'}
 			height={{ sm: `${isBig ? '80vh' : '60vh'}`, xs: '80vh' }}
 		>
-			<img src={image} height={size} />
+			<img alt='Caracter' src={image} height={size} />
 		</Stack>
 	);
 };

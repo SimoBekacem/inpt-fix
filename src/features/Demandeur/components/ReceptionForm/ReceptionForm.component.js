@@ -5,7 +5,7 @@ import TechList from '../TechList/TechList.component';
 import SearchBar from '../SearchBar/SearchBar.component';
 import FirstComponent from '../DatePicker/DatePicker.component';
 
-const FormManager = () => {
+const ReceptionForm = () => {
 	return (
 		<Paper
 			sx={{
@@ -69,4 +69,4 @@ const FormManager = () => {
 	);
 };
 
-export default FormManager;
+export default ReceptionForm;

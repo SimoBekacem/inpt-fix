@@ -24,8 +24,8 @@ import {
 } from '../../constants/techLables.constant';
 
 // todo : ther is a problem in creating the peace fealde so fix it .
-const FormTech = () => {
-	const [quantity, setQuantity] = React.useState(1);
+const DiagnosticForm = () => {
+	let [quantity, setQuantity] = React.useState(1);
 	const handleClick = () => {
 		setQuantity(quantity++);
 	};
@@ -146,4 +146,4 @@ const FormTech = () => {
 	);
 };
 
-export default FormTech;
+export default DiagnosticForm;

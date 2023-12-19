@@ -29,7 +29,10 @@ export default function Header() {
 						justifyContent={'space-between'}
 						width='100%'
 					>
-						<img src={require('../../../../assets/logo.svg')} />
+						<img
+							alt='logo'
+							src={require('../../../../assets/logo.svg')}
+						/>
 						<IconButton
 							size='large'
 							edge='start'

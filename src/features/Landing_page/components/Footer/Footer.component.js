@@ -17,7 +17,7 @@ const Footer = () => {
 				justifyContent={'space-between'}
 				alignItems={'center'}
 			>
-				<img src={require('../../../../assets/logo.svg')} />
+				<img alt='logo' src={require('../../../../assets/logo.svg')} />
 				<Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
 					<Button
 						sx={{
