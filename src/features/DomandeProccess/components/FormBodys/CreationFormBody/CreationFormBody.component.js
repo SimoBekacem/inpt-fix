@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import TitleAndStipper from '../TitleAndStipper/TitleAndStipper.component';
-import CreationForm from '../CreationForm/CreationForm.component';
+import TitleAndStipper from '../../TitleAndStipper/TitleAndStipper.component';
+import CreationForm from '../../Forms/CreationForm/CreationForm.component';
 
 const CreationFormBody = () => {
 	return (

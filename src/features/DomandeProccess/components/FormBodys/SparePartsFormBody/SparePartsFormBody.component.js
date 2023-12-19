@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import TitleAndStipper from '../TitleAndStipper/TitleAndStipper.component';
-import SparePartsForm from '../SparePartsForm/SparePartsForm.component';
+import TitleAndStipper from '../../TitleAndStipper/TitleAndStipper.component';
+import SparePartsForm from '../../Forms/SparePartsForm/SparePartsForm.component';
 
 const SparePartsFormBody = () => {
 	return (

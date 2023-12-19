@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import TitleAndStipper from '../TitleAndStipper/TitleAndStipper.component';
-import DiagnosticForm from '../DiagnosticForm/DiagnosticForm.component';
+import TitleAndStipper from '../../TitleAndStipper/TitleAndStipper.component';
+import DiagnosticForm from '../../Forms/DiagnosticForm/DiagnosticForm.component';
 
 const DiagnosticFormBody = () => {
 	return (

@@ -9,7 +9,7 @@ import {
 	Radio,
 	RadioGroup,
 } from '@mui/material';
-import { rechangePeaces } from '../../constants/managerStore.constant';
+import { rechangePeaces } from '../../../constants/managerStore.constant';
 console.log(rechangePeaces.designation);
 const SparePartsForm = () => {
 	return (

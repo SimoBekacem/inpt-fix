@@ -1,8 +1,8 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import TitleAndStipper from '../TitleAndStipper/TitleAndStipper.component';
-import ReceptionForm from '../ReceptionForm/ReceptionForm.component';
+import TitleAndStipper from '../../TitleAndStipper/TitleAndStipper.component';
+import ReceptionForm from '../../Forms/ReceptionForm/ReceptionForm.component';
 
 const ReceptionFormBody = () => {
 	return (

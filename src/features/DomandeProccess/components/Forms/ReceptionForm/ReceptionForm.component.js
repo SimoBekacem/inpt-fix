@@ -1,9 +1,9 @@
 import React from 'react';
 import { Paper, Grid, Stack, Button, Divider } from '@mui/material';
 
-import TechList from '../TechList/TechList.component';
-import SearchBar from '../SearchBar/SearchBar.component';
-import FirstComponent from '../DatePicker/DatePicker.component';
+import TechList from '../../TechList/TechList.component';
+import SearchBar from '../../SearchBar/SearchBar.component';
+import FirstComponent from '../../DatePicker/DatePicker.component';
 
 const ReceptionForm = () => {
 	return (

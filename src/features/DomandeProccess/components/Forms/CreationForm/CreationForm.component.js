@@ -10,15 +10,15 @@ import {
 	Button,
 } from '@mui/material';
 
-import UploadButton from '../UploadButton/UploadButton.component';
-import DataFromDropdown from '../FormDropdonw/Dropdonw.compoenent';
-import FirstComponent from '../DatePicker/DatePicker.component';
+import UploadButton from '../../UploadButton/UploadButton.component';
+import DataFromDropdown from '../../Dropdown/Dropdown.compoenent';
+import FirstComponent from '../../DatePicker/DatePicker.component';
 
 import {
 	formTextLabel,
 	formSelectLabels,
 	formDropdown,
-} from '../../constants/stepperLables.constant';
+} from '../../../constants/stepperLables.constant';
 
 const CreationFrom = () => {
 	return (
