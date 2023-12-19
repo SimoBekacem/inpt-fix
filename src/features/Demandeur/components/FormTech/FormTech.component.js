@@ -21,7 +21,7 @@ import {
 	textFieldLabel,
 	needRechangePeacesLables,
 	rechangePeacesLabels,
-} from '../../constants/techLables.comstant';
+} from '../../constants/techLables.constant';
 
 // todo : ther is a problem in creating the peace fealde so fix it .
 const FormTech = () => {

@@ -5,6 +5,7 @@ import LignerStepper from '../LignerStepper/LignerSteppercomponent';
 import DataFrom from '../FormDemandeur /Form.component';
 import FormManager from '../FormManager/FromManager.component';
 import FormTech from '../FormTech/FormTech.component';
+import FormManagerStore from '../FormManagerStore/FormManagerStore.component';
 
 const FormBody = () => {
 	return (
@@ -31,6 +32,9 @@ const FormBody = () => {
 			</Grid>
 			<Grid xs={12}>
 				<FormTech />
+			</Grid>
+			<Grid xs={12}>
+				<FormManagerStore />
 			</Grid>
 		</Grid>
 	);
