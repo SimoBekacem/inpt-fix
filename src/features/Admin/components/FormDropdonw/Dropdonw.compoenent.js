@@ -1,15 +1,23 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { useNavigate } from 'react-router-dom';
+import {
+	Button,
+	Select,
+	FormControl,
+	MenuItem,
+	InputLabel,
+	Box,
+} from '@mui/material';
 
-const DataFromDropdown = ({ label }) => {
+const DataFormDropdown = ({ label, navigateButton }) => {
 	const [age, setAge] = React.useState('');
+	const navigate = useNavigate();
 
 	const handleChange = (event) => {
 		setAge(event.target.value);
+	};
+	const handleClick = () => {
+		navigate(navigateButton);
 	};
 
 	return (
@@ -27,9 +35,22 @@ const DataFromDropdown = ({ label }) => {
 					<MenuItem value={20}>Twenty</MenuItem>
 					<MenuItem value={30}>Thirty</MenuItem>
 				</Select>
+				{navigateButton ? (
+					<Button
+						value={40}
+						color='primary'
+						variant='contained'
+						sx={{
+							marginTop: '1rem',
+						}}
+						onClick={handleClick}
+					>
+						Add Role
+					</Button>
+				) : null}
 			</FormControl>
 		</Box>
 	);
 };
 
-export default DataFromDropdown;
+export default DataFormDropdown;

@@ -4,10 +4,7 @@ import { Stack, Button } from '@mui/material';
 import DataTable from '../Table/Table.component';
 import DataFrom from '../Form /Form.component';
 
-import {
-	rows,
-	tableHeaderLabels,
-} from '../../constantes/RoleTableLabels';
+import { rows, tableHeaderLabels } from '../../constantes/RoleTableLabels';
 import {
 	DataFromLabels,
 	profileDropDownLables,

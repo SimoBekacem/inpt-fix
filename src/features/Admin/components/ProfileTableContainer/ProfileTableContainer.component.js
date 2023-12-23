@@ -36,6 +36,7 @@ const TableContainer = () => {
 					<DataFrom
 						DataFromLabels={DataFromLabels}
 						profileDropDownLables={profileDropDownLables}
+						navigateButton={'/admin/roles'}
 					/>
 				) : (
 					<DataTable
