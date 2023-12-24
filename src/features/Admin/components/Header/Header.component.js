@@ -9,9 +9,9 @@ import {
 	Stack,
 	Badge,
 } from '@mui/material';
-
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
+
 import HeaderProfile from '../HeaderProfile/HeaderProfile.component';
 
 export default function ButtonAppBar() {

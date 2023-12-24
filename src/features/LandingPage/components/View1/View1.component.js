@@ -1,7 +1,7 @@
 import React from 'react';
 import { Grid } from '@mui/material';
 
-import Title from '../Title/Title.componen';
+import Title from '../Title/Title.component';
 import Caracter from '../Caracter/Caracter.component';
 
 const caracterImage1 = require('../../../../assets/caracter1.png');

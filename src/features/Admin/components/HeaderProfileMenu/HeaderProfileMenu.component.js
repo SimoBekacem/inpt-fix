@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Menu, MenuItem, Avatar, ListItemIcon, Divider } from '@mui/material';
-
 import Logout from '@mui/icons-material/Logout';
 import PersonAdd from '@mui/icons-material/PersonAdd';
 import Settings from '@mui/icons-material/Settings';

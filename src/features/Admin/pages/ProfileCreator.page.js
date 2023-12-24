@@ -2,7 +2,6 @@ import React from 'react';
 import { Grid } from '@mui/material';
 
 import Header from '../components/Header/Header.component';
-
 import TableContainer from '../components/ProfileTableContainer/ProfileTableContainer.component';
 
 const ProfileCreatoPage = () => {

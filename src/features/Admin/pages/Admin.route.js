@@ -1,20 +1,16 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import ProfileCreatoPage from './ProfileCreator.page';
+import ProfileCreatorPage from './ProfileCreator.page';
 import RolesCreatorPage from './RolesCreator.page';
 
-const Admin = () => {
+const AdminRouter = () => {
 	return (
 		<Routes>
-			<Route path='/people' element={<ProfileCreatoPage />} />
-			<Route
-				path='/
-			'
-				element={<RolesCreatorPage />}
-			/>
+			<Route path='/people' element={<ProfileCreatorPage />} />
+			<Route path='/roles' element={<RolesCreatorPage />} />
 		</Routes>
 	);
 };
 
-export default Admin;
+export default AdminRouter;

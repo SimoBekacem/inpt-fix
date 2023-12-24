@@ -3,16 +3,19 @@ import { CssBaseline } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 
 //todo : you need to set up the router in order to route between the pages .
-import Landing_page from './features/Landing_page/pages/Landing_page.page';
-import Admin from './features/Admin/pages/Admin.route';
-import DomandeProcess from './features/DomandeProccess/pages/DomandeProcess.page';
+import LandingPage from './features/LandingPage/pages/LandingPage.page';
+import AdminRoute from './features/Admin/pages/Admin.route';
+// import DomandeProcess from './features/DomandeProccess/pages/DomandeProcess.page';
+
+//todo: the header is repeating in all the pages so make it good .
+
 function App() {
 	return (
 		<>
 			<CssBaseline />
 			<Routes>
-				<Route path='/' element={<Landing_page />} />
-				<Route path='/admin/*' element={<Admin />} />
+				<Route path='/' element={<LandingPage />} />
+				<Route path='/admin/*' element={<AdminRoute />} />
 			</Routes>
 		</>
 	);

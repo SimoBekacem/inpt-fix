@@ -1,7 +1,7 @@
 import React from 'react';
 import { Paper, Grid, TextField } from '@mui/material';
 
-import DataFromDropdown from '../FormDropdonw/Dropdonw.compoenent';
+import DataFormDropdown from '../FormDropdonw/Dropdonw.component';
 
 const DataFrom = ({
 	DataFromLabels,
@@ -46,7 +46,7 @@ const DataFrom = ({
 					// // todo: here we have a problem that shows the add role button in the people form and add role form so fix it .
 					return (
 						<Grid item xs={4}>
-							<DataFromDropdown
+							<DataFormDropdown
 								label={label}
 								navigateButton={navigateButton}
 							/>

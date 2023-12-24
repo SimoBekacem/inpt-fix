@@ -6,7 +6,7 @@ import View1 from '../components/View1/View1.component';
 import View2 from '../components/View2/View2.component';
 import Footer from '../components/Footer/Footer.component';
 
-const Landing_page = () => {
+const LandingPage = () => {
 	return (
 		<Grid container>
 			<Grid item xs={12}>
@@ -25,4 +25,4 @@ const Landing_page = () => {
 	);
 };
 
-export default Landing_page;
+export default LandingPage;
