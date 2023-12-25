@@ -1,13 +1,18 @@
 import React from 'react';
-import { Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { Button, Grid, Stack } from '@mui/material';
 
 // todo: here you need to set up the router in order to route between the pages
 import Header from '../components/Header/Header.component';
-import CreationFormBody from '../components/FormBodys/CreationFormBody/CreationFormBody.component';
+import TableBody from '../components/TableBodys/TableBody.component.js';
 
 import { tableHeaderLabels, rows } from '../constants/applicantTableLabels.js';
 
 const ApplicantPage = () => {
+	const navigate = useNavigate();
+	const handleClick = () => {
+		navigate('createRequest');
+	};
 	return (
 		<Grid container>
 			<Grid item xs={12}>
@@ -16,6 +21,19 @@ const ApplicantPage = () => {
 			<Grid item xs={12}>
 				<TableBody tableHeaderLabels={tableHeaderLabels} rows={rows} />
 			</Grid>
+			<Grid item xs={12}>
+				<Stack direction='row' justifyContent='center'>
+					<Button
+						variant='contained'
+						size='large'
+						onClick={handleClick}
+					>
+						Create New Request
+					</Button>
+				</Stack>
+			</Grid>
 		</Grid>
 	);
 };
+
+export default ApplicantPage;

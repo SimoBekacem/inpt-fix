@@ -10,8 +10,8 @@ const CreationFormBody = () => {
 			<Grid item xs={12}>
 				<TitleAndStipper title={'Créer une nouvelle demande'} />
 			</Grid>
-			<Grid xs={12}>
-				<CreationForm />
+			<Grid item xs={12}>
+				<CreationForm request />
 			</Grid>
 		</Grid>
 	);
