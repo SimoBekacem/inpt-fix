@@ -1,14 +1,20 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const DataFromDropdown = ({ label }) => {
+import { setLocalisationValue } from '../../slices/creationForm.slice';
+
+const DataFormDropdown = ({ label, name }) => {
 	const [age, setAge] = React.useState('');
+	const dispatch = useDispatch();
 
 	const handleChange = (event) => {
+		const info = event.target.value;
+		dispatch(setLocalisationValue({ [name]: info }));
 		setAge(event.target.value);
 	};
 
@@ -21,6 +27,7 @@ const DataFromDropdown = ({ label }) => {
 					id='demo-simple-select'
 					value={age}
 					label={label}
+					name={name}
 					onChange={handleChange}
 				>
 					<MenuItem value={10}>Ten</MenuItem>
@@ -32,4 +39,4 @@ const DataFromDropdown = ({ label }) => {
 	);
 };
 
-export default DataFromDropdown;
+export default DataFormDropdown;

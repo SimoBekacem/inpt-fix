@@ -1,17 +1,21 @@
 import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import Button from '@mui/material/Button';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 
 import { VisuallyHiddenInput } from './UploadButton.style';
 
+import { setImageValue } from '../../slices/creationForm.slice';
+
 const UploadButton = () => {
-	const [imageSrc, setImageSrc] = React.useState('');
+	const dispatch = useDispatch();
 
 	const handleImageUpload = (event) => {
 		const file = event.target.files[0];
 		const imageUrl = URL.createObjectURL(file);
-		setImageSrc(imageUrl);
+		dispatch(setImageValue(imageUrl));
 	};
+
 	return (
 		<>
 			<Button
@@ -30,7 +34,6 @@ const UploadButton = () => {
 					type='file'
 				/>
 			</Button>
-			{/* <img src={imageSrc} alt='Uploaded Image' /> */}
 		</>
 	);
 };

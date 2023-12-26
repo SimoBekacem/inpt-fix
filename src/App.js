@@ -1,5 +1,4 @@
 import React from 'react';
-import { CssBaseline } from '@mui/material';
 import { Routes, Route } from 'react-router-dom';
 
 //todo : you need to set up the router in order to route between the pages .
@@ -21,7 +20,6 @@ import ApplicantCreateRequestPage from './features/DomandeProccess/pages/Applica
 function App() {
 	return (
 		<>
-			<CssBaseline />
 			<Routes>
 				<Route path='/' element={<LandingPage />} />
 

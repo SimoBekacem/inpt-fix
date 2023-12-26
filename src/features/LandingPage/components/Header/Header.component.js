@@ -31,7 +31,7 @@ export default function Header() {
 					>
 						<img
 							alt='logo'
-							src={require('../../../../assets/logo.svg')}
+							src={require('../../../../assets/logo.png')}
 						/>
 						<IconButton
 							size='large'
