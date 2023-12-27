@@ -51,7 +51,9 @@ const CreationFrom = ({ readOnly, request }) => {
 		) {
 			dispatch(addNewRequest(creationForm));
 			dispatch(ressetValues());
-			navigate('/applicant');
+			setTimeout(() => {
+				navigate('/applicant');
+			}, 1000);
 			setError(false);
 		} else {
 			setError(true);

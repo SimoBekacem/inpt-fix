@@ -12,6 +12,7 @@ import TechnicianPage from './features/DomandeProccess/pages/Technician.page';
 import StoreManagerPage from './features/DomandeProccess/pages/StoreManager.page';
 
 import ApplicantCreateRequestPage from './features/DomandeProccess/pages/ApplicantCreateRequest.page';
+import ApplicantReadRequestPage from './features/DomandeProccess/pages/ApplicantReadRequest.page';
 
 // import DomandeProcess from './features/DomandeProccess/pages/DomandeProcess.page';
 
@@ -31,7 +32,10 @@ function App() {
 						path='createRequest'
 						element={<ApplicantCreateRequestPage />}
 					/>
-					<Route path='readRequest/:id' element={<AdminRoute />} />
+					<Route
+						path='readRequest/:id'
+						element={<ApplicantReadRequestPage />}
+					/>
 					<Route path='updateRequest/:id' element={<AdminRoute />} />
 				</Route>
 

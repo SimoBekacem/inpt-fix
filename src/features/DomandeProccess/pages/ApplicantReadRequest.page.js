@@ -7,7 +7,7 @@ import Header from '../components/Header/Header.component';
 //?: here we have the forms ready to go :
 import CreationFormBody from '../components/FormBodys/CreationFormBody/CreationFormBody.component';
 
-const ApplicantCreateRequestPage = () => {
+const ApplicantReadRequestPage = () => {
 	return (
 		<Grid container>
 			<Grid item xs={12}>
@@ -20,4 +20,4 @@ const ApplicantCreateRequestPage = () => {
 	);
 };
 
-export default ApplicantCreateRequestPage;
+export default ApplicantReadRequestPage;

@@ -3,7 +3,7 @@ import { Stack } from '@mui/material';
 
 import DataTable from '../DataTable/DataTable.component';
 
-const TableBody = ({ tableHeaderLabels, rows }) => {
+const TableBody = () => {
 	return (
 		<Stack
 			direction={'column'}
@@ -22,7 +22,7 @@ const TableBody = ({ tableHeaderLabels, rows }) => {
 					width: '90%',
 				}}
 			>
-				<DataTable tableHeaderLabels={tableHeaderLabels} rows={rows} />
+				<DataTable />
 			</Stack>
 		</Stack>
 	);

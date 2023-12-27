@@ -12,7 +12,7 @@ const createData = (id, creationDate, Localisation, anomalieType, buttons) => {
 };
 export const buttonsLables = ['Delet', 'Edit', 'Detais'];
 
-const buttons = buttonsLables.map((label) => {
+export const buttons = buttonsLables.map((label) => {
 	return (
 		<Button
 			variant='outlined'

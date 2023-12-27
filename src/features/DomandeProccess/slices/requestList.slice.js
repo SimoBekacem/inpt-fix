@@ -2,7 +2,56 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	value: {
-		requests: [],
+		requests: [
+			{
+				id: 'Problem-MZDRNF1887',
+				problemType: ['Mécanique', 'Hydraulique'],
+				descreption: 'hello world',
+				image: '../../../assets/problemImageTest.png',
+				date: new Date(),
+				localisation: {
+					departement: 'departement B',
+					subDepartement: 'class B110',
+				},
+				readedByManager: false,
+			},
+			{
+				id: 'Problem-HPR2GHOVRC',
+				problemType: ['Mécanique', 'Hydraulique'],
+				descreption: 'hello world',
+				image: '../../../assets/problemImageTest.png',
+				date: new Date(),
+				localisation: {
+					departement: 'departement B',
+					subDepartement: 'class B110',
+				},
+				readedByManager: false,
+			},
+			{
+				id: 'Problem-7ZXT64KZGK',
+				problemType: ['Mécanique', 'Hydraulique'],
+				descreption: 'hello world',
+				image: '../../../assets/problemImageTest.png',
+				date: new Date(),
+				localisation: {
+					departement: 'departement B',
+					subDepartement: 'class B110',
+				},
+				readedByManager: false,
+			},
+			{
+				id: 'Problem-QGZFNXKWNP',
+				problemType: ['Mécanique', 'Hydraulique'],
+				descreption: 'hello world',
+				image: '../../../assets/problemImageTest.png',
+				date: new Date(),
+				localisation: {
+					departement: 'departement B',
+					subDepartement: 'class B110',
+				},
+				readedByManager: false,
+			},
+		],
 	},
 };
 

@@ -6,7 +6,7 @@ const initialState = {
 		problemType: [],
 		descreption: '',
 		image: '',
-		date: new Date().toISOString(),
+		date: new Date(),
 		localisation: {
 			departement: '',
 			subDepartement: '',
@@ -53,7 +53,18 @@ export const creationFormSlice = createSlice({
 			state.value.image = imageSrc;
 		},
 		ressetValues: (state) => {
-			state.value = initialState;
+			state.value = {
+				id: 'Problem-' + Math.random().toString(36).substr(2, 20),
+				problemType: [],
+				descreption: '',
+				image: '',
+				date: new Date(),
+				localisation: {
+					departement: '',
+					subDepartement: '',
+				},
+				readedByManager: false,
+			};
 		},
 	},
 });
