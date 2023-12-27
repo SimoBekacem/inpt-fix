@@ -10,9 +10,19 @@ import { tableHeaderLabels, rows } from '../constants/applicantTableLabels.js';
 
 const ApplicantPage = () => {
 	const navigate = useNavigate();
+	// const requestList = useSelector((state) => state.requestList.value);
+	// const newRows = requestList.requests.map((request) => {
+	// 	return {
+	// 		id: request.id,
+	// 		creationDate: request.date,
+	// 		Localisation: `${request.localisation.departement} ${request.localisation.subDepartement}`,
+	// 		anomalieType: request.problemType[0],
+	// 	};
+	// });
 	const handleClick = () => {
 		navigate('createRequest');
 	};
+	//!: here we have little problem that is the requestList.requests object is not adapted to the tabel form so adapte the tabel on requestList.requests .
 	return (
 		<Grid container>
 			<Grid item xs={12}>

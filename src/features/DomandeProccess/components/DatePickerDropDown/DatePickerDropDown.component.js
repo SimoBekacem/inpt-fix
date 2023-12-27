@@ -5,7 +5,7 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs from 'dayjs';
 
 //?: dayjs() give use the currante date but if you put dayjs('2022-04-17') it will display this date 2022-04-17
-export default function FirstComponent({ isDisabled, defaultDate }) {
+export default function DatePickerDropDown({ isDisabled, defaultDate }) {
 	return (
 		<LocalizationProvider dateAdapter={AdapterDayjs}>
 			<DatePicker

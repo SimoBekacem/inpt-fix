@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,33 +6,29 @@ import {
 	Paper,
 	Grid,
 	TextField,
-	Checkbox,
-	FormControlLabel,
 	FormLabel,
 	Stack,
 	Button,
-	Box,
 } from '@mui/material';
 
 import UploadButton from '../../UploadButton/UploadButton.component';
+import CreationFormCheckBox from '../../CreationFormCheckBox/CreationFormCheckBox.component';
 import DataFormDropDown from '../../Dropdown/Dropdown.compoenent';
-import FirstComponent from '../../DatePicker/DatePicker.component';
+import DatePickerDropDown from '../../DatePickerDropDown/DatePickerDropDown.component';
+import ImageContainer from '../../ImageContainer/ImageContainer.component';
+import AlertError from '../../Alerts/AlertError/AlertError.component';
+
+import { formTextLabel } from '../../../constants/stepperLables.constant';
 
 import {
-	formTextLabel,
-	formSelectLabels,
-} from '../../../constants/stepperLables.constant';
-
-import {
-	setProblemListValue,
 	setDescriptionValue,
+	ressetValues,
 } from '../../../slices/creationForm.slice';
 import { addNewRequest } from '../../../slices/requestList.slice';
 
-const imageLogo = require('../../../../../assets/imageLogo.png');
-
 const CreationFrom = ({ readOnly, request }) => {
 	const creationForm = useSelector((state) => state.creationForm.value);
+	const [error, setError] = useState(false);
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	useEffect(() => {
@@ -44,13 +40,22 @@ const CreationFrom = ({ readOnly, request }) => {
 		dispatch(setDescriptionValue(descreption));
 	};
 
-	const handleCheckBoxChange = (event) => {
-		const item = event.target.value;
-		dispatch(setProblemListValue(item));
-	};
 	const handleButtonClick = () => {
-		dispatch(addNewRequest(creationForm));
-		navigate('/applicant');
+		const problemType = creationForm.problemType;
+		if (
+			creationForm.descreption &&
+			problemType.lenght !== 0 &&
+			creationForm.image &&
+			creationForm.localisation.departement &&
+			creationForm.localisation.subDepartement
+		) {
+			dispatch(addNewRequest(creationForm));
+			dispatch(ressetValues());
+			navigate('/applicant');
+			setError(false);
+		} else {
+			setError(true);
+		}
 	};
 
 	return (
@@ -82,27 +87,10 @@ const CreationFrom = ({ readOnly, request }) => {
 						}}
 						spacing={1}
 					>
-						{formSelectLabels.map((label) => {
-							let checkBox = <Checkbox value={label} />;
-							if (request.problemType && readOnly) {
-								const checkedList = request.problemType;
-								const isChecked = checkedList.includes(label);
-								checkBox = (
-									<Checkbox checked={isChecked} disabled />
-								);
-							}
-							return (
-								<Grid item key={label}>
-									<FormControlLabel
-										onChange={(event) => {
-											handleCheckBoxChange(event);
-										}}
-										control={checkBox}
-										label={label}
-									/>
-								</Grid>
-							);
-						})}
+						<CreationFormCheckBox
+							readOnly={readOnly}
+							request={request}
+						/>
 					</Grid>
 				</Grid>
 				<Grid item xs={6}>
@@ -127,43 +115,16 @@ const CreationFrom = ({ readOnly, request }) => {
 							name='subDepartement'
 							label={'Sub Departement'}
 						/>
-						<FirstComponent isDisabled={true} />
+						<DatePickerDropDown isDisabled={true} />
 						<UploadButton />
 					</Stack>
 				</Grid>
 				<Grid item xs={6}>
-					<Box
-						height='250px'
-						width='100%'
-						sx={{
-							display: 'flex',
-							justifyContent: 'center',
-							alignItems: 'center',
-						}}
-					>
-						{creationForm.image ? (
-							<img
-								src={creationForm.image}
-								alt='problem exemple'
-								style={{
-									maxWidth: '100%',
-									maxHeight: '100%',
-								}}
-							/>
-						) : (
-							<img
-								src={imageLogo}
-								alt='problem exemple'
-								style={{
-									maxWidth: '100%',
-									maxHeight: '100%',
-								}}
-							/>
-						)}
-					</Box>
+					<ImageContainer />
 				</Grid>
 				<Grid item xs={12}>
 					<Stack justifyContent={'center'} alignItems={'center'}>
+						{error ? <AlertError /> : null}
 						<Button
 							variant='contained'
 							onClick={() => {

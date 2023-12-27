@@ -1,9 +1,9 @@
 import React from 'react';
 import { Stack } from '@mui/material';
 
-import DataTable from '../Table/Table.component';
+import DataTable from '../DataTable/DataTable.component';
 
-const ApplicantTableBody = ({ tableHeaderLabels, rows }) => {
+const TableBody = ({ tableHeaderLabels, rows }) => {
 	return (
 		<Stack
 			direction={'column'}
@@ -28,4 +28,4 @@ const ApplicantTableBody = ({ tableHeaderLabels, rows }) => {
 	);
 };
 
-export default ApplicantTableBody;
+export default TableBody;

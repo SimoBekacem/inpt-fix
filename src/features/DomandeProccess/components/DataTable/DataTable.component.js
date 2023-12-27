@@ -12,7 +12,9 @@ import {
 	StyledTableCell,
 	StyledTableRow,
 	headerTypographyStyle,
-} from './Table.style';
+} from './DataTable.style';
+
+//todo: here we should get the rows from the requestList.slice but it should be adapted to the table body .
 
 const DataTable = ({ rows, tableHeaderLabels }) => {
 	return (
@@ -35,7 +37,7 @@ const DataTable = ({ rows, tableHeaderLabels }) => {
 				</TableHead>
 				<TableBody>
 					{rows.map((row) => (
-						<StyledTableRow key={row.lastName}>
+						<StyledTableRow key={row.id}>
 							{Object.keys(row).map((keyName, i) => (
 								<StyledTableCell
 									sx={{

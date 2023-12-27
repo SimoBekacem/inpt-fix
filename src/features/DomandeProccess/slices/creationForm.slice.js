@@ -52,6 +52,9 @@ export const creationFormSlice = createSlice({
 			const imageSrc = action.payload;
 			state.value.image = imageSrc;
 		},
+		ressetValues: (state) => {
+			state.value = initialState;
+		},
 	},
 });
 
@@ -60,6 +63,7 @@ export const {
 	setDescriptionValue,
 	setLocalisationValue,
 	setImageValue,
+	ressetValues,
 } = creationFormSlice.actions;
 
 export default creationFormSlice.reducer;
