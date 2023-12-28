@@ -10,6 +10,7 @@ import { setProblemListValue } from '../../slices/creationForm.slice';
 const ApplicantTable = ({ request, readOnly }) => {
 	const dispatch = useDispatch();
 
+	console.log(request);
 	const handleCheckBoxChange = (event) => {
 		const item = event.target.value;
 		dispatch(setProblemListValue(item));
@@ -19,8 +20,8 @@ const ApplicantTable = ({ request, readOnly }) => {
 		<>
 			{formSelectLabels.map((label) => {
 				let checkBox = <Checkbox value={label} />;
-				if (request.problemType && readOnly) {
-					const checkedList = request.problemType;
+				if (request && readOnly) {
+					const checkedList = request;
 					const isChecked = checkedList.includes(label);
 					checkBox = <Checkbox checked={isChecked} disabled />;
 				}

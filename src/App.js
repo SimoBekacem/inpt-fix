@@ -33,7 +33,7 @@ function App() {
 						element={<ApplicantCreateRequestPage />}
 					/>
 					<Route
-						path='readRequest/:id'
+						path='readRequest/:requestId'
 						element={<ApplicantReadRequestPage />}
 					/>
 					<Route path='updateRequest/:id' element={<AdminRoute />} />

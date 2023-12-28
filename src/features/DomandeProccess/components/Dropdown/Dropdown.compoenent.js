@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 
 import { setLocalisationValue } from '../../slices/creationForm.slice';
 
-const DataFormDropdown = ({ label, name }) => {
+const DataFormDropdown = ({ label, name, defaultValue }) => {
 	const [age, setAge] = React.useState('');
 	const dispatch = useDispatch();
 
@@ -25,8 +25,9 @@ const DataFormDropdown = ({ label, name }) => {
 				<Select
 					labelId='demo-simple-select-label'
 					id='demo-simple-select'
-					value={age}
+					value={defaultValue ? defaultValue : age}
 					label={label}
+					disabled={defaultValue ? true : false}
 					name={name}
 					onChange={handleChange}
 				>

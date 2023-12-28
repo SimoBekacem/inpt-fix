@@ -9,16 +9,15 @@ import {
 	Paper,
 } from '@mui/material';
 
+import ApplicantTableButtons from '../ApplicantTableButtons/ApplicantTableButtons.component';
+
 import {
 	StyledTableCell,
 	StyledTableRow,
 	headerTypographyStyle,
 } from './DataTable.style';
 
-import {
-	buttons,
-	tableHeaderLabels,
-} from '../../constants/applicantTableLabels';
+import { tableHeaderLabels } from '../../constants/applicantTableLabels';
 
 //todo: here we should get the rows from the requestList.slice but it should be adapted to the table body .
 
@@ -36,7 +35,6 @@ const DataTable = () => {
 			creationDate: formattedDate,
 			Localisation: `${request.localisation.departement} ${request.localisation.subDepartement}`,
 			anomalieType: request.problemType[0],
-			buttons,
 		};
 	});
 	return (
@@ -61,17 +59,30 @@ const DataTable = () => {
 					{newRows.map((row) => (
 						<StyledTableRow key={row.id}>
 							{Object.keys(row).map((keyName, i) => (
-								<StyledTableCell
-									sx={{
-										fontWeight: 'bold',
-									}}
-									align='center'
-									scope='row'
-									size='large'
-								>
-									{row[keyName]}
-								</StyledTableCell>
+								<>
+									<StyledTableCell
+										sx={{
+											fontWeight: 'bold',
+										}}
+										align='center'
+										scope='row'
+										size='large'
+									>
+										{row[keyName]}
+									</StyledTableCell>
+								</>
 							))}
+							{/*todo: here i should bring the buttons with the routs*/}
+							<StyledTableCell
+								sx={{
+									fontWeight: 'bold',
+								}}
+								align='center'
+								scope='row'
+								size='large'
+							>
+								<ApplicantTableButtons requestId={row.id} />
+							</StyledTableCell>
 						</StyledTableRow>
 					))}
 				</TableBody>

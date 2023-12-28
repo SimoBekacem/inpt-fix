@@ -5,7 +5,7 @@ import { Grid } from '@mui/material';
 import Header from '../components/Header/Header.component';
 
 //?: here we have the forms ready to go :
-import CreationFormBody from '../components/FormBodys/CreationFormBody/CreationFormBody.component';
+import ReadForm from '../components/ReadForm/ReadForm.component';
 
 const ApplicantReadRequestPage = () => {
 	return (
@@ -14,7 +14,7 @@ const ApplicantReadRequestPage = () => {
 				<Header />
 			</Grid>
 			<Grid item xs={12}>
-				<CreationFormBody />
+				<ReadForm />
 			</Grid>
 		</Grid>
 	);

@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const IMAGE_LOGO = require('../../../../assets/imageLogo.png');
 
-const ImageContainer = () => {
+const ImageContainer = ({ readOnlyImage }) => {
 	const creationForm = useSelector((state) => state.creationForm.value);
 	return (
 		<Box
@@ -16,9 +16,9 @@ const ImageContainer = () => {
 				alignItems: 'center',
 			}}
 		>
-			{creationForm.image ? (
+			{readOnlyImage ? (
 				<img
-					src={creationForm.image}
+					src={readOnlyImage}
 					alt='problem exemple'
 					style={{
 						maxWidth: '100%',
@@ -27,8 +27,10 @@ const ImageContainer = () => {
 				/>
 			) : (
 				<img
-					src={IMAGE_LOGO}
-					alt='problem logo'
+					src={creationForm.image ? creationForm.image : IMAGE_LOGO}
+					alt={
+						creationForm.image ? 'problem exemple' : 'problem logo'
+					}
 					style={{
 						maxWidth: '100%',
 						maxHeight: '100%',
