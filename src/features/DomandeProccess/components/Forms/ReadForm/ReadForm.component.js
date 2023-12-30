@@ -10,6 +10,7 @@ import CreationFormCheckBox from '../../CreationFormCheckBox/CreationFormCheckBo
 
 const ReadForm = () => {
 	const { requestId } = useParams();
+	console.log(requestId);
 	const requestList = useSelector(
 		(state) => state.requestList.value.requests
 	);

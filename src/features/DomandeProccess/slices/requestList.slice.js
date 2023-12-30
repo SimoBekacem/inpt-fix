@@ -24,8 +24,8 @@ const initialState = {
 				image: problemTestImage,
 				date: new Date(),
 				localisation: {
-					departement: 'departement B',
-					subDepartement: 'class B110',
+					departement: 20,
+					subDepartement: 20,
 				},
 				readedByManager: false,
 				deleted: false,
@@ -37,8 +37,8 @@ const initialState = {
 				image: problemTestImage,
 				date: new Date(),
 				localisation: {
-					departement: 'departement B',
-					subDepartement: 'class B110',
+					departement: 20,
+					subDepartement: 20,
 				},
 				readedByManager: false,
 				deleted: false,
@@ -50,8 +50,8 @@ const initialState = {
 				image: problemTestImage,
 				date: new Date(),
 				localisation: {
-					departement: 'departement B',
-					subDepartement: 'class B110',
+					departement: 20,
+					subDepartement: 20,
 				},
 				readedByManager: false,
 				deleted: false,
@@ -75,9 +75,34 @@ export const requestListSlice = createSlice({
 			);
 			state.value.requests[index].deleted = true;
 		},
+		addTechName: (state, action) => {
+			const requestId = action.payload.id;
+			const techNames = action.payload.names;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				techNames,
+			};
+		},
+		addDeadLine: (state, action) => {
+			const requestId = action.payload.id;
+			const Deadline = action.payload.Deadline;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				Deadline,
+			};
+		},
 	},
 });
 
-export const { addNewRequest, deleteRequest } = requestListSlice.actions;
+export const { addNewRequest, deleteRequest, addTechName, addDeadLine } =
+	requestListSlice.actions;
 
 export default requestListSlice.reducer;

@@ -15,6 +15,8 @@ import ApplicantCreateRequestPage from './features/DomandeProccess/pages/Applica
 import ApplicantReadRequestPage from './features/DomandeProccess/pages/ApplicantReadRequest.page';
 import ApplicantUpdateRequestPage from './features/DomandeProccess/pages/ApplicantUpdateRequestPage.page';
 
+import ManagerDelegateRequest from './features/DomandeProccess/pages/ManagerDelegateRequest.page';
+
 // import DomandeProcess from './features/DomandeProccess/pages/DomandeProcess.page';
 
 //todo: the header is repeating in all the pages so make it good .
@@ -43,7 +45,13 @@ function App() {
 					/>
 				</Route>
 
-				<Route path='/manager' element={<ManagerPage />} />
+				<Route path='/manager'>
+					<Route index element={<ManagerPage />} />
+					<Route
+						path='delegateRequest/:requestId'
+						element={<ManagerDelegateRequest />}
+					/>
+				</Route>
 				<Route path='/technician' element={<TechnicianPage />} />
 				<Route path='/storeManager' element={<StoreManagerPage />} />
 			</Routes>

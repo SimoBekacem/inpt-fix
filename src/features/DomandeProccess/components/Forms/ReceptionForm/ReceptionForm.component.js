@@ -3,9 +3,12 @@ import { Paper, Grid, Stack, Button, Divider } from '@mui/material';
 
 import TechList from '../../TechList/TechList.component';
 import SearchBar from '../../SearchBar/SearchBar.component';
-import FirstComponent from '../../DatePicker/DatePicker.component';
+import DatePickerDropDown from '../../DatePickerDropDown/DatePickerDropDown.component';
+import { useNavigate, useParams } from 'react-router-dom';
 
 const ReceptionForm = () => {
+	const { requestId } = useParams();
+	const navigate = useNavigate();
 	return (
 		<Paper
 			sx={{
@@ -39,7 +42,7 @@ const ReceptionForm = () => {
 					<SearchBar />
 				</Grid>
 				<Grid item xs={12}>
-					<TechList />
+					<TechList requestId={requestId} />
 				</Grid>
 				<Grid item xs={12}>
 					<Divider
@@ -56,12 +59,19 @@ const ReceptionForm = () => {
 						alignItems={'center'}
 						width={'100%'}
 					>
-						<FirstComponent />
+						<DatePickerDropDown requestId={requestId} />
 					</Stack>
 				</Grid>
 				<Grid item xs={12}>
 					<Stack justifyContent={'center'} alignItems={'center'}>
-						<Button variant='contained'>Submit</Button>
+						<Button
+							variant='contained'
+							onClick={() => {
+								navigate('/manager');
+							}}
+						>
+							Submit
+						</Button>
 					</Stack>
 				</Grid>
 			</Grid>

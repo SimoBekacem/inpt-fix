@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
 	Stack,
 	Typography,
@@ -12,9 +13,16 @@ import {
 
 import { techListLabels } from '../../constants/stepperLables.constant';
 
-const TechList = () => {
-	const [checked, setChecked] = React.useState([0]);
+import { addTechName } from '../../slices/requestList.slice';
 
+const TechList = ({ requestId }) => {
+	const [checked, setChecked] = React.useState([]);
+	React.useEffect(() => {
+		dispatch(addTechName({ id: requestId, names: checked }));
+	}, [checked]);
+	const requests = useSelector((state) => state.requestList.value.requests);
+	console.log(requests);
+	const dispatch = useDispatch();
 	const handleToggle = (value) => () => {
 		const currentIndex = checked.indexOf(value);
 		const newChecked = [...checked];
@@ -50,6 +58,7 @@ const TechList = () => {
 									<Checkbox
 										edge='start'
 										checked={checked.indexOf(label) !== -1}
+										value={`${label.firstName}   ${label.lastName}`}
 										tabIndex={-1}
 										disableRipple
 										inputProps={{
