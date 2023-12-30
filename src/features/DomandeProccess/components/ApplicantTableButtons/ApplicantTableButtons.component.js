@@ -20,6 +20,9 @@ const ApplicantTableButtons = ({ requestId }) => {
 				sx={{
 					marginLeft: '1rem',
 				}}
+				onClick={() => {
+					navigate(`updateRequest/${requestId}`);
+				}}
 			>
 				Edit
 			</Button>

@@ -3,20 +3,15 @@ import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Paper, Grid, TextField, FormLabel, Stack } from '@mui/material';
 
-import ImageContainer from '../ImageContainer/ImageContainer.component';
-import DataFormDropDown from '../Dropdown/Dropdown.compoenent';
-import DatePickerDropDown from '../DatePickerDropDown/DatePickerDropDown.component';
-import CreationFormCheckBox from '../CreationFormCheckBox/CreationFormCheckBox.component';
+import ImageContainer from '../../ImageContainer/ImageContainer.component';
+import DataFormDropDown from '../../Dropdown/Dropdown.compoenent';
+import DatePickerDropDown from '../../DatePickerDropDown/DatePickerDropDown.component';
+import CreationFormCheckBox from '../../CreationFormCheckBox/CreationFormCheckBox.component';
 
 const ReadForm = () => {
 	const { requestId } = useParams();
-	//todo: here we can see the id now you should get the request from the list base on the id and pass the arguments
 	const requestList = useSelector(
 		(state) => state.requestList.value.requests
-	);
-	console.log(
-		'🚀 ~ file: ReadForm.component.js:15 ~ ReadForm ~ requestList:',
-		requestList
 	);
 	const request = requestList.filter((request) => request.id === requestId);
 	return (
@@ -72,6 +67,7 @@ const ReadForm = () => {
 							name='departement'
 							label={'Departement'}
 							defaultValue={request[0].localisation.departement}
+							readOnly
 						/>
 						<DataFormDropDown
 							name='subDepartement'
@@ -79,6 +75,7 @@ const ReadForm = () => {
 							defaultValue={
 								request[0].localisation.subDepartement
 							}
+							readOnly
 						/>
 						<DatePickerDropDown isDisabled={true} />
 					</Stack>

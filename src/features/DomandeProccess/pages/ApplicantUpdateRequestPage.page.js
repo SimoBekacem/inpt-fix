@@ -5,19 +5,19 @@ import { Grid } from '@mui/material';
 import Header from '../components/Header/Header.component';
 
 //?: here we have the forms ready to go :
-import ReadForm from '../components/Forms/ReadForm/ReadForm.component';
+import UpdateForm from '../components/UpdateForm/UpdateForm.component';
 
-const ApplicantReadRequestPage = () => {
+const ApplicantUpdateRequestPage = () => {
 	return (
 		<Grid container>
 			<Grid item xs={12}>
 				<Header />
 			</Grid>
 			<Grid item xs={12}>
-				<ReadForm />
+				<UpdateForm />
 			</Grid>
 		</Grid>
 	);
 };
 
-export default ApplicantReadRequestPage;
+export default ApplicantUpdateRequestPage;

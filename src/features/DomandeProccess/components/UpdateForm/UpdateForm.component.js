@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 import {
 	Paper,
@@ -11,30 +11,38 @@ import {
 	Button,
 } from '@mui/material';
 
-import UploadButton from '../../UploadButton/UploadButton.component';
-import CreationFormCheckBox from '../../CreationFormCheckBox/CreationFormCheckBox.component';
-import DataFormDropDown from '../../Dropdown/Dropdown.compoenent';
-import DatePickerDropDown from '../../DatePickerDropDown/DatePickerDropDown.component';
-import ImageContainer from '../../ImageContainer/ImageContainer.component';
-import AlertError from '../../Alerts/AlertError/AlertError.component';
+import UploadButton from '../UploadButton/UploadButton.component';
+import CreationFormCheckBox from '../CreationFormCheckBox/CreationFormCheckBox.component';
+import DataFormDropDown from '../Dropdown/Dropdown.compoenent';
+import DatePickerDropDown from '../DatePickerDropDown/DatePickerDropDown.component';
+import ImageContainer from '../ImageContainer/ImageContainer.component';
+import AlertError from '../Alerts/AlertError/AlertError.component';
 
-import { formTextLabel } from '../../../constants/stepperLables.constant';
+import { formTextLabel } from '../../constants/stepperLables.constant';
 
 import {
 	setDescriptionValue,
 	ressetValues,
-} from '../../../slices/creationForm.slice';
-import { addNewRequest } from '../../../slices/requestList.slice';
+} from '../../slices/creationForm.slice';
+import { addNewRequest } from '../../slices/requestList.slice';
 
-const CreationFrom = () => {
-	const creationForm = useSelector((state) => state.creationForm.value);
+const UpdateForm = () => {
 	const [error, setError] = useState(false);
+
+	const creationForm = useSelector((state) => state.creationForm.value);
 	const dispatch = useDispatch();
+
 	const navigate = useNavigate();
+	const { requestId } = useParams();
+
 	useEffect(() => {
 		console.log(creationForm);
 	}, [creationForm]);
 
+	const requestList = useSelector(
+		(state) => state.requestList.value.requests
+	);
+	const request = requestList.filter((request) => request.id === requestId);
 	const handleDescriptionChange = (event) => {
 		const descreption = event.target.value;
 		dispatch(setDescriptionValue(descreption));
@@ -89,7 +97,9 @@ const CreationFrom = () => {
 						}}
 						spacing={1}
 					>
-						<CreationFormCheckBox />
+						<CreationFormCheckBox
+							request={request[0].problemType}
+						/>
 					</Grid>
 				</Grid>
 				<Grid item xs={6}>
@@ -97,6 +107,7 @@ const CreationFrom = () => {
 						id='outlined-multiline-static'
 						label={formTextLabel}
 						onChange={handleDescriptionChange}
+						defaultValue={request[0].descreption}
 						multiline
 						rows={10}
 						sx={{
@@ -109,17 +120,22 @@ const CreationFrom = () => {
 						<DataFormDropDown
 							name='departement'
 							label={'Departement'}
+							defaultValue={request[0].localisation.departement}
 						/>
 						<DataFormDropDown
 							name='subDepartement'
 							label={'Sub Departement'}
+							defaultValue={
+								request[0].localisation.subDepartement
+							}
 						/>
 						<DatePickerDropDown isDisabled={true} />
 						<UploadButton />
 					</Stack>
 				</Grid>
 				<Grid item xs={6}>
-					<ImageContainer />
+					{/* here we have a problem the url is not working */}
+					<ImageContainer image={request[0].image} />
 				</Grid>
 				<Grid item xs={12}>
 					<Stack justifyContent={'center'} alignItems={'center'}>
@@ -134,7 +150,7 @@ const CreationFrom = () => {
 							}}
 							size='large'
 						>
-							Submit
+							Update
 						</Button>
 					</Stack>
 				</Grid>
@@ -143,4 +159,4 @@ const CreationFrom = () => {
 	);
 };
 
-export default CreationFrom;
+export default UpdateForm;

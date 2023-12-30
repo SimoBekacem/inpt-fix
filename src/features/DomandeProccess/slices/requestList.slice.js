@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+const problemTestImage = require('../../../assets/problemImageTest.png');
 
 const initialState = {
 	value: {
@@ -7,11 +8,11 @@ const initialState = {
 				id: 'Problem-MZDRNF1887',
 				problemType: ['Mécanique', 'Hydraulique'],
 				descreption: 'hello world',
-				image: '../../../assets/problemImageTest.png',
+				image: problemTestImage,
 				date: new Date(),
 				localisation: {
-					departement: 'departement B',
-					subDepartement: 'class B110',
+					departement: 10,
+					subDepartement: 10,
 				},
 				readedByManager: false,
 			},
@@ -19,7 +20,7 @@ const initialState = {
 				id: 'Problem-HPR2GHOVRC',
 				problemType: ['Mécanique', 'Hydraulique'],
 				descreption: 'hello world',
-				image: '../../../assets/problemImageTest.png',
+				image: problemTestImage,
 				date: new Date(),
 				localisation: {
 					departement: 'departement B',
@@ -31,7 +32,7 @@ const initialState = {
 				id: 'Problem-7ZXT64KZGK',
 				problemType: ['Mécanique', 'Hydraulique'],
 				descreption: 'hello world',
-				image: '../../../assets/problemImageTest.png',
+				image: problemTestImage,
 				date: new Date(),
 				localisation: {
 					departement: 'departement B',
@@ -43,7 +44,7 @@ const initialState = {
 				id: 'Problem-QGZFNXKWNP',
 				problemType: ['Mécanique', 'Hydraulique'],
 				descreption: 'hello world',
-				image: '../../../assets/problemImageTest.png',
+				image: problemTestImage,
 				date: new Date(),
 				localisation: {
 					departement: 'departement B',

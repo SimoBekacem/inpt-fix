@@ -1,0 +1,2 @@
+//todo: look at the redux and think if it is better to break it down into small peaces each one controle and input.
+//todo: look at the component in order to separate the view from the logic.

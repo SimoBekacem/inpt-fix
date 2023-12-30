@@ -20,10 +20,12 @@ const ApplicantTable = ({ request, readOnly }) => {
 		<>
 			{formSelectLabels.map((label) => {
 				let checkBox = <Checkbox value={label} />;
-				if (request && readOnly) {
+				if (request) {
 					const checkedList = request;
 					const isChecked = checkedList.includes(label);
-					checkBox = <Checkbox checked={isChecked} disabled />;
+					checkBox = (
+						<Checkbox checked={isChecked} disabled={readOnly} />
+					);
 				}
 				return (
 					<Grid item key={label}>
