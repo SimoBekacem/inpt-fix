@@ -12,6 +12,7 @@ const initialState = {
 			subDepartement: '',
 		},
 		readedByManager: false,
+		deleted: false,
 	},
 };
 
@@ -64,6 +65,7 @@ export const creationFormSlice = createSlice({
 					subDepartement: '',
 				},
 				readedByManager: false,
+				deleted: false,
 			};
 		},
 	},

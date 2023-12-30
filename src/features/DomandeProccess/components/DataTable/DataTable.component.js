@@ -19,24 +19,29 @@ import {
 
 import { tableHeaderLabels } from '../../constants/applicantTableLabels';
 
-//todo: here we should get the rows from the requestList.slice but it should be adapted to the table body .
-
 const DataTable = () => {
 	const requests = useSelector((state) => state.requestList.value.requests);
-	const newRows = requests.map((request) => {
-		//?: this is for formating the date in order to show it
-		const currentDate = request.date;
-		const year = currentDate.getFullYear();
-		const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-		const day = currentDate.getDate().toString().padStart(2, '0');
-		const formattedDate = `${year}-${month}-${day}`;
-		return {
-			id: request.id,
-			creationDate: formattedDate,
-			Localisation: `${request.localisation.departement} ${request.localisation.subDepartement}`,
-			anomalieType: request.problemType[0],
-		};
-	});
+	const newRows = requests
+		.map((request) => {
+			console.log(request.deleted);
+			//?: this is for formating the date in order to show it
+			if (!request.deleted) {
+				const currentDate = request.date;
+				const year = currentDate.getFullYear();
+				const month = (currentDate.getMonth() + 1)
+					.toString()
+					.padStart(2, '0');
+				const day = currentDate.getDate().toString().padStart(2, '0');
+				const formattedDate = `${year}-${month}-${day}`;
+				return {
+					id: request.id,
+					creationDate: formattedDate,
+					Localisation: `${request.localisation.departement} ${request.localisation.subDepartement}`,
+					anomalieType: request.problemType[0],
+				};
+			}
+		})
+		.filter(Boolean);
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 700 }} aria-label='customized table'>

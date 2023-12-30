@@ -1,16 +1,22 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { deleteRequest } from '../../slices/requestList.slice';
 
 const ApplicantTableButtons = ({ requestId }) => {
 	const navigate = useNavigate();
-	console.log(requestId);
+	const dispatch = useDispatch();
+
 	return (
 		<>
 			<Button
 				variant='outlined'
 				sx={{
 					marginLeft: '1rem',
+				}}
+				onClick={() => {
+					dispatch(deleteRequest(requestId));
 				}}
 			>
 				Delet

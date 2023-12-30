@@ -15,6 +15,7 @@ const initialState = {
 					subDepartement: 10,
 				},
 				readedByManager: false,
+				deleted: true,
 			},
 			{
 				id: 'Problem-HPR2GHOVRC',
@@ -27,6 +28,7 @@ const initialState = {
 					subDepartement: 'class B110',
 				},
 				readedByManager: false,
+				deleted: false,
 			},
 			{
 				id: 'Problem-7ZXT64KZGK',
@@ -39,6 +41,7 @@ const initialState = {
 					subDepartement: 'class B110',
 				},
 				readedByManager: false,
+				deleted: false,
 			},
 			{
 				id: 'Problem-QGZFNXKWNP',
@@ -51,6 +54,7 @@ const initialState = {
 					subDepartement: 'class B110',
 				},
 				readedByManager: false,
+				deleted: false,
 			},
 		],
 	},
@@ -64,9 +68,16 @@ export const requestListSlice = createSlice({
 			const newRequest = action.payload;
 			state.value.requests.push(newRequest);
 		},
+		deleteRequest: (state, action) => {
+			const requestId = action.payload;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			state.value.requests[index].deleted = true;
+		},
 	},
 });
 
-export const { addNewRequest } = requestListSlice.actions;
+export const { addNewRequest, deleteRequest } = requestListSlice.actions;
 
 export default requestListSlice.reducer;
