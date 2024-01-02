@@ -3,7 +3,7 @@ import { Grid } from '@mui/material';
 
 // todo: here you need to set up the router in order to route between the pages
 import Header from '../components/Header/Header.component';
-import TableBody from '../components/TableBodys/TableBody.component.js';
+import TechnecianTableBody from '../components/TechnicianTableBody/TechnicianTableBody.component.js';
 
 import { tableHeaderLabels, rows } from '../constants/technitianTableLabels.js';
 const TechnicianPage = () => {
@@ -13,7 +13,10 @@ const TechnicianPage = () => {
 				<Header />
 			</Grid>
 			<Grid item xs={12}>
-				<TableBody tableHeaderLabels={tableHeaderLabels} rows={rows} />
+				<TechnecianTableBody
+					tableHeaderLabels={tableHeaderLabels}
+					rows={rows}
+				/>
 			</Grid>
 		</Grid>
 	);

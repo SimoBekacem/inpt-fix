@@ -99,10 +99,66 @@ export const requestListSlice = createSlice({
 				Deadline,
 			};
 		},
+		addReparationResult: (state, action) => {
+			const requestId = action.payload.id;
+			const reparationResult = action.payload.reparationResult;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				reparationResult,
+			};
+		},
+		addNeedPeaces: (state, action) => {
+			const requestId = action.payload.id;
+			const needPeaces = action.payload.needPeaces;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				needPeaces,
+			};
+		},
+		addPeacesList: (state, action) => {
+			const requestId = action.payload.id;
+			const peacesList = action.payload.peacesList;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				peacesList,
+			};
+		},
+		addTechDescription: (state, action) => {
+			const requestId = action.payload.id;
+			const techDescreption = action.payload.techDescription;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				techDescreption,
+			};
+		},
 	},
 });
 
-export const { addNewRequest, deleteRequest, addTechName, addDeadLine } =
-	requestListSlice.actions;
+export const {
+	addNewRequest,
+	deleteRequest,
+	addTechName,
+	addDeadLine,
+	addReparationResult,
+	addNeedPeaces,
+	addTechDescription,
+	addPeacesList,
+} = requestListSlice.actions;
 
 export default requestListSlice.reducer;

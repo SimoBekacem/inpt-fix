@@ -7,9 +7,9 @@ import DiagnosticForm from '../../Forms/DiagnosticForm/DiagnosticForm.component'
 const DiagnosticFormBody = () => {
 	return (
 		<Grid container>
-			<Grid item xs={12}>
+			{/* <Grid item xs={12}>
 				<TitleAndStipper title={'Recepter une nouvelle demande'} />
-			</Grid>
+			</Grid> */}
 			<Grid xs={12}>
 				<DiagnosticForm />
 			</Grid>

@@ -9,7 +9,7 @@ export const needRechangePeacesLables = [
 	'Necessite une piece de rechange',
 ];
 export const rechangePeacesLabels = [
-	'Designation peice',
-	'Modele / Reference',
+	'Designation_peice',
+	'Modele_Reference',
 	'Quantite',
 ];
