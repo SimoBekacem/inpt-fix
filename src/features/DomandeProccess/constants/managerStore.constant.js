@@ -1,22 +1,22 @@
 export const rechangePeaces = [
 	{
-		designation: 'p1',
-		modele: 'M1',
-		quantite: '1',
+		Designation_peice: 'p1',
+		Modele_Reference: 'M1',
+		Quantite: '1',
 	},
 	{
-		designation: 'p2',
-		modele: 'M2',
-		quantite: '2',
+		Designation_peice: 'p2',
+		Modele_Reference: 'M2',
+		Quantite: '2',
 	},
 	{
-		designation: 'p3',
-		modele: 'M3',
-		quantite: '3',
+		Designation_peice: 'p3',
+		Modele_Reference: 'M3',
+		Quantite: '3',
 	},
 	{
-		designation: 'p4',
-		modele: 'M4',
-		quantite: '4',
+		Designation_peice: 'p4',
+		Modele_Reference: 'M4',
+		Quantite: '4',
 	},
 ];

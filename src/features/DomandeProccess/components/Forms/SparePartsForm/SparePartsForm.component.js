@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import {
 	Paper,
 	Grid,
@@ -9,9 +10,24 @@ import {
 	Radio,
 	RadioGroup,
 } from '@mui/material';
+import { addStoreDescription } from '../../../slices/requestList.slice';
 import { rechangePeaces } from '../../../constants/managerStore.constant';
-console.log(rechangePeaces.designation);
+import { useDispatch, useSelector } from 'react-redux';
+
 const SparePartsForm = () => {
+	const { requestId } = useParams();
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+	console.log(requestId);
+	const requestList = useSelector(
+		(state) => state.requestList.value.requests
+	);
+	const request = requestList.filter((request) => {
+		return request.id === requestId;
+	});
+	const peacesList = request[0].peacesList
+		? request[0].peacesList
+		: rechangePeaces;
 	return (
 		<Paper
 			sx={{
@@ -32,7 +48,7 @@ const SparePartsForm = () => {
 			>
 				<Grid item xs={12}>
 					<Stack spacing={3}>
-						{rechangePeaces.map((peace) => {
+						{peacesList.map((peace) => {
 							return (
 								<Stack
 									direction='row'
@@ -42,7 +58,7 @@ const SparePartsForm = () => {
 									<TextField
 										id='outlined-read-only-input'
 										label='Designation peice'
-										defaultValue={peace.designation}
+										defaultValue={peace.Designation_peice}
 										InputProps={{
 											readOnly: true,
 										}}
@@ -51,7 +67,7 @@ const SparePartsForm = () => {
 										id='outlined-basic'
 										label={'Modele / Reference'}
 										variant='outlined'
-										defaultValue={peace.modele}
+										defaultValue={peace.Modele_Reference}
 										InputProps={{
 											readOnly: true,
 										}}
@@ -60,7 +76,7 @@ const SparePartsForm = () => {
 										id='outlined-basic'
 										label={'Quantite'}
 										variant='outlined'
-										defaultValue={peace.quantite}
+										defaultValue={peace.Quantite}
 										InputProps={{
 											readOnly: true,
 										}}
@@ -91,6 +107,14 @@ const SparePartsForm = () => {
 						id='outlined-multiline-static'
 						label={'Commentaire'}
 						multiline
+						onChange={(event) => {
+							dispatch(
+								addStoreDescription({
+									id: requestId,
+									storeDescription: event.target.value,
+								})
+							);
+						}}
 						rows={7}
 						sx={{
 							width: '100%',
@@ -101,6 +125,9 @@ const SparePartsForm = () => {
 					<Stack justifyContent={'center'} alignItems={'end'}>
 						<Button
 							variant='contained'
+							onClick={() => {
+								navigate('/storeManager');
+							}}
 							size='large'
 							sx={{
 								margin: '1rem 0',

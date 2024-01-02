@@ -147,6 +147,18 @@ export const requestListSlice = createSlice({
 				techDescreption,
 			};
 		},
+		addStoreDescription: (state, action) => {
+			const requestId = action.payload.id;
+			const storeDescreption = action.payload.storeDescription;
+			const index = state.value.requests.findIndex(
+				(obj) => obj.id === requestId
+			);
+			const oldState = state.value.requests[index];
+			state.value.requests[index] = {
+				...oldState,
+				storeDescreption,
+			};
+		},
 	},
 });
 
@@ -159,6 +171,8 @@ export const {
 	addNeedPeaces,
 	addTechDescription,
 	addPeacesList,
+	addPeacesListExist,
+	addStoreDescription,
 } = requestListSlice.actions;
 
 export default requestListSlice.reducer;

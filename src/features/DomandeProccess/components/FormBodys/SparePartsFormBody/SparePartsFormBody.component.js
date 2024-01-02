@@ -7,11 +7,11 @@ import SparePartsForm from '../../Forms/SparePartsForm/SparePartsForm.component'
 const SparePartsFormBody = () => {
 	return (
 		<Grid container>
-			<Grid item xs={12}>
+			{/* <Grid item xs={12}>
 				<TitleAndStipper
 					title={"Pieces de rechange d'une nouvelle demande"}
 				/>
-			</Grid>
+			</Grid> */}
 			<Grid xs={12}>
 				<SparePartsForm />
 			</Grid>

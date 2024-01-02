@@ -13,6 +13,7 @@ import {
 import MailIcon from '@mui/icons-material/Mail';
 import MenuIcon from '@mui/icons-material/Menu';
 import HeaderProfile from '../HeaderProfile/HeaderProfile.component';
+import { Link } from 'react-router-dom';
 
 export default function ButtonAppBar() {
 	return (
@@ -35,6 +36,16 @@ export default function ButtonAppBar() {
 					>
 						INPT-Fix
 					</Typography>
+					<Stack
+						direction={'row'}
+						spacing={4}
+						sx={{ marginRight: '4rem' }}
+					>
+						<Link to={'/applicant'}>Applicant</Link>
+						<Link to={'/manager'}>manager</Link>
+						<Link to={'/technician'}>technician</Link>
+						<Link to={'/storeManager'}>Stor Manager</Link>
+					</Stack>
 					<Stack spacing={2} direction={'row'} alignItems={'center'}>
 						<Badge badgeContent={4} color='success'>
 							<MailIcon color='secondary' fontSize='large' />
