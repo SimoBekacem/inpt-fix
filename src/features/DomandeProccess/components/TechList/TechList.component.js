@@ -17,23 +17,53 @@ import { addTechName } from '../../slices/requestList.slice';
 
 const TechList = ({ requestId }) => {
 	const [checked, setChecked] = React.useState([]);
+	const [technician, setTechnician] = React.useState([]);
+	const dispatch = useDispatch();
+
 	React.useEffect(() => {
 		dispatch(addTechName({ id: requestId, names: checked }));
 	}, [checked]);
-	const requests = useSelector((state) => state.requestList.value.requests);
-	console.log(requests);
-	const dispatch = useDispatch();
-	const handleToggle = (value) => () => {
-		const currentIndex = checked.indexOf(value);
-		const newChecked = [...checked];
 
-		if (currentIndex === -1) {
+	const handleToggle = (value) => () => {
+		const currentIndexChecked = checked.indexOf(value);
+		const newChecked = [...checked];
+		if (currentIndexChecked === -1) {
 			newChecked.push(value);
 		} else {
-			newChecked.splice(currentIndex, 1);
+			newChecked.splice(currentIndexChecked, 1);
+		}
+
+		const currentIndexTechnecian = technician.indexOf(value);
+		const newTechnician = [...technician];
+		if (currentIndexTechnecian === -1) {
+			newTechnician.push(`${value.firstName} ${value.lastName}`);
+		} else {
+			newTechnician.splice(currentIndexTechnecian, 1);
 		}
 
 		setChecked(newChecked);
+		setTechnician(newTechnician);
+
+		// Assuming your API endpoint for updating technicians is '/api/updateTechnicians'
+		const apiEndpoint = 'http://localhost:8000/api/technicians';
+
+		// Make a POST request to the API with the list of technicians
+		fetch(apiEndpoint, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify({ technicianNames: newTechnician }),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log('API response:', data);
+				// Handle the response as needed
+			})
+			.catch((error) => {
+				console.error('Error posting technicians:', error);
+				// Handle the error
+			});
 	};
 
 	return (

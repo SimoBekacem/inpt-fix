@@ -27,7 +27,7 @@ async function addTechnicians(technicianNames) {
 		console.log('Disconnected from MongoDB.');
 	} catch (error) {
 		console.error('Error:', error.message);
-		throw error; // Re-throw the error to be caught by the controller
+		throw error;
 	}
 }
 

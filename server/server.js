@@ -1,7 +1,13 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const techniciansRouter = require('./technicains.router'); // Adjust the path based on your project structure
 
+app.use(
+	cors({
+		origin: 'http://localhost:3001',
+	})
+);
 // Middleware to parse JSON in the request body
 app.use(express.json());
 
