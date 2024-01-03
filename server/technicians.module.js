@@ -8,7 +8,6 @@ const Technician = mongoose.model('Technician', technicianSchema);
 
 async function addTechnicians(technicianNames) {
 	try {
-		// Replace 'your_database_url' with your actual MongoDB connection URL
 		await mongoose.connect(
 			'mongodb+srv://simohassane2002:EjkIwcZVhPoHCjcz@nasacluster.0hhcpvj.mongodb.net/',
 			{

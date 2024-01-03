@@ -8,6 +8,11 @@ import DataFormDropDown from '../../Dropdown/Dropdown.compoenent';
 import DatePickerDropDown from '../../DatePickerDropDown/DatePickerDropDown.component';
 import CreationFormCheckBox from '../../CreationFormCheckBox/CreationFormCheckBox.component';
 
+import {
+	departementLabels,
+	subDepartementLabels,
+} from '../../../constants/dropdownLabels.constant';
+
 const ReadForm = () => {
 	const { requestId } = useParams();
 	console.log(requestId);
@@ -67,12 +72,14 @@ const ReadForm = () => {
 						<DataFormDropDown
 							name='departement'
 							label={'Departement'}
+							labels={departementLabels}
 							defaultValue={request[0].localisation.departement}
 							readOnly
 						/>
 						<DataFormDropDown
 							name='subDepartement'
 							label={'Sub Departement'}
+							labels={subDepartementLabels}
 							defaultValue={
 								request[0].localisation.subDepartement
 							}

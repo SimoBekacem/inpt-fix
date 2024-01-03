@@ -25,6 +25,10 @@ import {
 	ressetValues,
 } from '../../slices/creationForm.slice';
 import { addNewRequest } from '../../slices/requestList.slice';
+import {
+	departementLabels,
+	subDepartementLabels,
+} from '../../constants/dropdownLabels.constant';
 
 const UpdateForm = () => {
 	const [error, setError] = useState(false);
@@ -120,11 +124,13 @@ const UpdateForm = () => {
 						<DataFormDropDown
 							name='departement'
 							label={'Departement'}
+							labels={departementLabels}
 							defaultValue={request[0].localisation.departement}
 						/>
 						<DataFormDropDown
 							name='subDepartement'
 							label={'Sub Departement'}
+							labels={subDepartementLabels}
 							defaultValue={
 								request[0].localisation.subDepartement
 							}

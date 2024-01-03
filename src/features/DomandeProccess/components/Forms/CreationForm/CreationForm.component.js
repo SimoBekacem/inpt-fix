@@ -25,6 +25,10 @@ import {
 	ressetValues,
 } from '../../../slices/creationForm.slice';
 import { addNewRequest } from '../../../slices/requestList.slice';
+import {
+	departementLabels,
+	subDepartementLabels,
+} from '../../../constants/dropdownLabels.constant';
 
 const CreationFrom = () => {
 	const creationForm = useSelector((state) => state.creationForm.value);
@@ -109,10 +113,12 @@ const CreationFrom = () => {
 						<DataFormDropDown
 							name='departement'
 							label={'Departement'}
+							labels={departementLabels}
 						/>
 						<DataFormDropDown
 							name='subDepartement'
 							label={'Sub Departement'}
+							labels={subDepartementLabels}
 						/>
 						<DatePickerDropDown isDisabled={true} />
 						<UploadButton />

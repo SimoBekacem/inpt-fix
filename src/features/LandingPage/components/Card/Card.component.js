@@ -8,8 +8,10 @@ import {
 } from '@mui/material';
 
 import { cardStyle, typographyStyle, buttonStyle } from './Card.style';
+import { useNavigate } from 'react-router-dom';
 
 const CostumCard = ({ title, description, button, color }) => {
+	const navigate = useNavigate();
 	return (
 		<Card sx={{ ...cardStyle, backgroundColor: color }}>
 			<CardContent>
@@ -28,7 +30,14 @@ const CostumCard = ({ title, description, button, color }) => {
 				</Typography>
 			</CardContent>
 			<CardActions>
-				<Button variant='outlined' color='success' sx={buttonStyle}>
+				<Button
+					variant='outlined'
+					onClick={() => {
+						navigate('/applicant');
+					}}
+					color='success'
+					sx={buttonStyle}
+				>
 					{button}
 				</Button>
 			</CardActions>

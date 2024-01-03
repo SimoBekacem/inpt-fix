@@ -8,7 +8,7 @@ import Select from '@mui/material/Select';
 
 import { setLocalisationValue } from '../../slices/creationForm.slice';
 
-const DataFormDropdown = ({ label, name, defaultValue, readOnly }) => {
+const DataFormDropdown = ({ label, name, defaultValue, readOnly, labels }) => {
 	const [age, setAge] = React.useState('');
 	const dispatch = useDispatch();
 
@@ -31,9 +31,17 @@ const DataFormDropdown = ({ label, name, defaultValue, readOnly }) => {
 					name={name}
 					onChange={handleChange}
 				>
-					<MenuItem value={10}>Ten</MenuItem>
-					<MenuItem value={20}>Twenty</MenuItem>
-					<MenuItem value={30}>Thirty</MenuItem>
+					{labels ? (
+						labels.map((label) => {
+							return <MenuItem value={label}>{label}</MenuItem>;
+						})
+					) : (
+						<>
+							<MenuItem value={10}>Ten</MenuItem>
+							<MenuItem value={20}>Twenty</MenuItem>
+							<MenuItem value={30}>Thirty</MenuItem>
+						</>
+					)}
 				</Select>
 			</FormControl>
 		</Box>

@@ -24,26 +24,20 @@ export const formDropdown = 'localisation';
 export const techListLabels = [
 	{
 		id: '1',
-		firstName: 'hassane',
-		lastName: 'simo',
-		roleService: 'pneumatique tech',
+		firstName: 'BELKACEM',
+		lastName: 'Mohamed',
+		roleService: 'Informatique Technician',
 	},
 	{
 		id: '2',
-		firstName: 'hassane',
-		lastName: 'simo',
-		roleService: 'pneumatique tech',
+		firstName: 'CHAHMI',
+		lastName: 'Reda',
+		roleService: 'Mecanique Technician',
 	},
 	{
 		id: '3',
-		firstName: 'hassane',
-		lastName: 'simo',
-		roleService: 'pneumatique tech',
-	},
-	{
-		id: '4',
-		firstName: 'hassane',
-		lastName: 'simo',
-		roleService: 'pneumatique tech',
+		firstName: 'SBIHI',
+		lastName: 'Elhabib',
+		roleService: 'Electrique Technician',
 	},
 ];
